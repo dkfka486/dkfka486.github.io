@@ -25,9 +25,29 @@
             자연수 \(n\)이 \(2 \le n \le 11\)일 때, \(-n^2 + 9n - 18\)의 \(n\)제곱근 중에서 음의 실수가 존재하도록 하는 모든 \(n\)의 값의 합을 구하시오.
         </p>
         
-        <label for="userAnswer">정답 : </label>
-        <input type="number" id="userAnswer" min="0" max="999" placeholder="숫자 입력">
+        <label for="userAnswer">답안: </label>
+        <input type="number" id="userAnswer" min="0" max="999" placeholder="입력">
         <button onclick="checkAnswer()">제출하기</button>
         <p id="resultMessage"></p>
+        
+        <script>
+        		function checkAnswer() {
+            		const correctAnswer = 31; 
+            
+            		const inputField = document.getElementById('userAnswer').value;
+            		const resultMessage = document.getElementById('resultMessage');
+                
+            		if (userInput === "") {
+                		resultMessage.textContent = "답안을 입력해 주세요!";
+                		resultMessage.style.color = "#ff9800";
+            		} else if (parseInt(userInput) === correctAnswer) {
+                		resultMessage.textContent = "정답입니다!";
+                		resultMessage.style.color = "#4caf50";
+            		} else {
+                		resultMessage.textContent = "오답입니다!";
+                		resultMessage.style.color = "#f44336";
+            		}
+        		}
+        </script>
     </body>
 </html>
